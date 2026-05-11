@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Portfólio premium de Isadora Rezende: social media, videomaker e storymaker em Marília - SP." />
+  <meta name="theme-color" content="#050505" />
+  <title>Isadora Rezende | Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="side-scroll" aria-hidden="true"><span id="sideScrollMarker"></span></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand brand-image" href="#inicio" aria-label="Voltar ao início">
+      <picture>
+        <source id="logoSource" srcset="assets/logos/logo_white_300x300.png 300w, assets/logos/logo_white_600x600.png 600w, assets/logos/logo_white_1200x1200.png 1200w" sizes="64px" />
+        <img id="siteLogo" src="assets/logos/logo_white_600x600.png" alt="Isadora Rezende" width="600" height="600" fetchpriority="high" />
+      </picture>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#perfil">Perfil</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <aside class="social-rail" aria-label="Redes sociais">
+    <span class="rail-line"></span>
+    <a href="https://instagram.com/socialmedia_isadora" target="_blank" rel="noopener" aria-label="Instagram">
+      <img src="assets/icons/instagram.svg" alt="" />
+    </a>
+    <a href="https://wa.me/5514996032749" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <img src="assets/icons/whatsapp.svg" alt="" />
+    </a>
+    <a href="mailto:Isadora.rezende28@gmail.com" aria-label="Gmail">
+      <img src="assets/icons/gmail.svg" alt="" />
+    </a>
+    <span class="rail-line"></span>
+  </aside>
+
+  <div class="scroll-graphics" aria-hidden="true">
+    <picture class="scroll-graphic scroll-graphic-phone" data-speed="-0.09" data-rotate="-4">
+      <source srcset="assets/graphics/instagram-phone_300.png 300w, assets/graphics/instagram-phone_600.png 600w, assets/graphics/instagram-phone_1200.png 1200w" sizes="260px" />
+      <img src="assets/graphics/instagram-phone_600.png" alt="" width="1200" height="1200" loading="eager" />
+    </picture>
+
+    <picture class="scroll-graphic scroll-graphic-light" data-speed="0.12" data-rotate="2">
+      <source srcset="assets/graphics/led-light_300.png 300w, assets/graphics/led-light_600.png 600w, assets/graphics/led-light_1200.png 1200w" sizes="220px" />
+      <img src="assets/graphics/led-light_600.png" alt="" width="1200" height="1200" loading="lazy" />
+    </picture>
+
+    <picture class="scroll-graphic scroll-graphic-mic" data-speed="0.16" data-rotate="-8">
+      <source srcset="assets/graphics/hollyland-conector_300.png 300w, assets/graphics/hollyland-conector_600.png 600w, assets/graphics/hollyland-conector_1200.png 1200w" sizes="210px" />
+      <img src="assets/graphics/hollyland-conector_600.png" alt="" width="1200" height="1200" loading="lazy" />
+    </picture>
+
+    <picture class="scroll-graphic scroll-graphic-recorder" data-speed="-0.14" data-rotate="7">
+      <source srcset="assets/graphics/hollyland-gravador_300.png 300w, assets/graphics/hollyland-gravador_600.png 600w, assets/graphics/hollyland-gravador_1200.png 1200w" sizes="170px" />
+      <img src="assets/graphics/hollyland-gravador_600.png" alt="" width="1200" height="1200" loading="lazy" />
+    </picture>
+
+    <picture class="scroll-graphic scroll-graphic-case" data-speed="0.08" data-rotate="-3">
+      <source srcset="assets/graphics/hollyland-case_300.png 300w, assets/graphics/hollyland-case_600.png 600w, assets/graphics/hollyland-case_1200.png 1200w" sizes="220px" />
+      <img src="assets/graphics/hollyland-case_600.png" alt="" width="1200" height="1200" loading="lazy" />
+    </picture>
+  </div>
+
+  <main>
+    <section class="section hero section-observe" id="inicio">
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <p class="kicker">Social Media • Videomaker • Storymaker</p>
+          <h1>Isadora<span></span></h1>
+          <p class="hero-text">Transformo registros do dia a dia em conteúdos que atraem, conectam e vendem.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#perfil">Conheça meu trabalho</a>
+            <a class="btn btn-ghost" href="#projetos">Ver projetos</a>
+          </div>
+        </div>
+
+        <figure class="hero-figure reveal" aria-label="Foto de Isadora Rezende">
+          <picture>
+            <source
+              id="heroImageSource"
+              srcset="assets/imagens/isadora/isadora_black_300.png 300w, assets/imagens/isadora/isadora_black_600.png 600w, assets/imagens/isadora/isadora_black_1200.png 1200w"
+              sizes="(max-width: 650px) 92vw, (max-width: 900px) 58vw, 45vw"
+            />
+            <img
+              id="heroImage"
+              src="assets/imagens/isadora/isadora_black_1200.png"
+              srcset="assets/imagens/isadora/isadora_black_300.png 300w, assets/imagens/isadora/isadora_black_600.png 600w, assets/imagens/isadora/isadora_black_1200.png 1200w"
+              sizes="(max-width: 650px) 92vw, (max-width: 900px) 58vw, 45vw"
+              alt="Isadora Rezende"
+              width="1200"
+              height="1200"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+          <figcaption>Direção visual • Conteúdo • Estratégia</figcaption>
+        </figure>
+      </div>
+      <div class="hero-line line-a" aria-hidden="true"></div>
+      <div class="hero-line line-b" aria-hidden="true"></div>
+      <a class="scroll-hint" href="#perfil" aria-label="Rolar para a seção perfil">Scroll</a>
+    </section>
+
+    <section class="section profile section-observe" id="perfil">
+      <div class="container split-layout">
+        <div class="section-number reveal">02</div>
+        <div class="content-panel reveal">
+          <p class="kicker">Quem sou eu?</p>
+          <h2>Prazer, Isadora Rezende</h2>
+          <p>Com 2 anos criando conteúdo estratégico para redes sociais, atuo como social media, videomaker e storymaker para marcas que querem se comunicar com estética, presença e intenção.</p>
+          <p>Meu diferencial está em transformar roteiro, ângulos, músicas, cores e direção visual em conteúdos com personalidade e estratégia.</p>
+
+          <div class="experience-card">
+            <strong>2 anos</strong>
+            <span>Experiência criando conteúdo</span>
+            <small>Estratégia • Estética • Direção</small>
+          </div>
+
+          <div class="skills" aria-label="Habilidades">
+            <div class="skill" style="--value:92%"><span>Social Media</span><i></i></div>
+            <div class="skill" style="--value:88%"><span>Vídeo</span><i></i></div>
+            <div class="skill" style="--value:94%"><span>Stories</span><i></i></div>
+            <div class="skill" style="--value:90%"><span>Direção criativa</span><i></i></div>
+          </div>
+
+          <div class="actions compact">
+            <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+            <a class="btn btn-ghost" href="#contato">Falar comigo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services section-observe" id="servicos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="kicker">Serviços</p>
+          <h2>Serviços.</h2>
+          <p>Soluções criativas para marcas que querem aparecer com profissionalismo.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal"><small>01</small><h3>Social Media</h3><p>Planejamento, linguagem visual e estratégia para redes sociais com posicionamento premium.</p></article>
+          <article class="service-card reveal"><small>02</small><h3>Videomaker</h3><p>Registros com direção, enquadramento e estética para marcas, produtos e bastidores.</p></article>
+          <article class="service-card reveal"><small>03</small><h3>Storymaker</h3><p>Conteúdo em tempo real para criar presença, conexão e desejo no público.</p></article>
+          <article class="service-card reveal"><small>04</small><h3>Reels e Stories</h3><p>Vídeos curtos com ritmo, roteiro e edição pensados para engajamento.</p></article>
+          <article class="service-card reveal"><small>05</small><h3>Cobertura de Eventos</h3><p>Captação ágil e elegante para eventos, lançamentos e experiências de marca.</p></article>
+          <article class="service-card reveal"><small>06</small><h3>Conteúdo para Marcas</h3><p>Direção visual, fotos e vídeos para fortalecer a percepção profissional da marca.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects section-observe" id="projetos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="kicker">Projetos</p>
+          <h2>Projetos com estética e intenção.</h2>
+          <p>Uma curadoria visual de conteúdos, marcas, eventos e registros estratégicos.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card wide reveal" data-carousel>
+            <div class="project-media portrait-media" data-track>
+              <picture>
+                <source srcset="assets/post/fotos-profissionais/agatha-nails_300.png 300w, assets/post/fotos-profissionais/agatha-nails_600.png 600w, assets/post/fotos-profissionais/agatha-nails_1200.png 1200w" sizes="(max-width: 650px) 92vw, 88vw" />
+                <img src="assets/post/fotos-profissionais/agatha-nails_600.png" alt="Foto profissional de manicure em estúdio utilizando equipamento de nail designer" loading="lazy" width="1200" height="1200" />
+              </picture>
+            </div>
+            <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button><button class="carousel-btn next" aria-label="Próxima imagem">›</button>
+            <div class="project-info"><span>Fotos profissionais</span><h3>Presença visual</h3><p>Retratos profissionais com direção de imagem, iluminação suave e composição pensada para fortalecer a presença da marca.</p></div>
+          </article>
+
+          <article class="project-card reveal" data-carousel>
+            <div class="project-media food-media" data-track>
+              <img
+                src="assets/post/comidas/bon-jelly_600.png"
+                srcset="assets/post/comidas/bon-jelly_300.png 300w, assets/post/comidas/bon-jelly_600.png 600w, assets/post/comidas/bon-jelly_1200.png 1200w"
+                sizes="(max-width: 650px) 92vw, (max-width: 1180px) 46vw, 560px"
+                alt="Foto de geleia Bon Jelly de amora produzida para conteúdo gastronômico"
+                loading="lazy"
+                width="1200"
+                height="1200"
+              />
+            </div>
+            <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button><button class="carousel-btn next" aria-label="Próxima imagem">›</button>
+            <div class="project-info"><span>Comidas</span><h3>Conteúdo gastronômico</h3><p>Produto real, textura, composição e apelo visual para fortalecer marcas de alimentos nas redes sociais.</p></div>
+          </article>
+
+          <article class="project-card reveal logo-card" data-carousel>
+            <div class="project-media contain branding-track" data-track>
+              <picture>
+                <source srcset="assets/post/logotipo-branding/nathalia-cipolla_300.png 300w, assets/post/logotipo-branding/nathalia-cipolla_600.png 600w, assets/post/logotipo-branding/nathalia-cipolla_1200.png 1200w" sizes="(max-width: 650px) 88vw, 44vw" />
+                <img src="assets/post/logotipo-branding/nathalia-cipolla_600.png" alt="Logotipo Nathalia Cipolla Nail Designer" loading="lazy" width="1200" height="1200" />
+              </picture>
+              <picture>
+                <source srcset="assets/post/logotipo-branding/agatha-santos_300.png 300w, assets/post/logotipo-branding/agatha-santos_600.png 600w, assets/post/logotipo-branding/agatha-santos_1200.png 1200w" sizes="(max-width: 650px) 88vw, 44vw" />
+                <img src="assets/post/logotipo-branding/agatha-santos_600.png" alt="Logotipo Agatha Santos Manicure e Nail Designer" loading="lazy" width="1200" height="1200" />
+              </picture>
+            </div>
+            <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button><button class="carousel-btn next" aria-label="Próxima imagem">›</button>
+            <div class="project-info"><span>Logotipo / Branding</span><h3>Identidade de marca</h3><p>Logotipos organizados em carrossel com proporção preservada, fundo limpo e leitura premium.</p></div>
+          </article>
+
+          <article class="project-card wide reveal" data-carousel>
+            <div class="project-media wedding-media" data-track>
+              <picture class="wedding-slide wedding-slide-portrait">
+                <source srcset="assets/post/casamentos/cerimonia_300.png 300w, assets/post/casamentos/cerimonia_600.png 600w, assets/post/casamentos/cerimonia_1200.png 1200w" sizes="(max-width: 650px) 92vw, 88vw" />
+                <img src="assets/post/casamentos/cerimonia_600.png" alt="Cerimônia de casamento ao ar livre com noivos diante de arco floral" loading="lazy" width="1200" height="1895" />
+              </picture>
+              <picture class="wedding-slide wedding-slide-detail">
+                <source srcset="assets/post/casamentos/aliancas_300.png 300w, assets/post/casamentos/aliancas_600.png 600w, assets/post/casamentos/aliancas_1200.png 1200w" sizes="(max-width: 650px) 92vw, 88vw" />
+                <img src="assets/post/casamentos/aliancas_600.png" alt="Detalhe das alianças sobre porta-alianças de madeira em casamento" loading="lazy" width="1200" height="1200" />
+              </picture>
+            </div>
+            <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button><button class="carousel-btn next" aria-label="Próxima imagem">›</button>
+            <div class="project-info"><span>Casamento</span><h3>Momentos com narrativa</h3><p>Cerimônia e detalhes captados com delicadeza, composição elegante e foco emocional para contar a história do dia.</p></div>
+          </article>
+
+          <article class="project-card reveal" data-carousel>
+            <div class="project-media event-media" data-track>
+              <picture>
+                <source srcset="assets/post/eventos-posts/dia-das-mulheres_300.png 300w, assets/post/eventos-posts/dia-das-mulheres_600.png 600w, assets/post/eventos-posts/dia-das-mulheres_1200.png 1200w" sizes="(max-width: 650px) 92vw, (max-width: 1180px) 46vw, 560px" />
+                <img src="assets/post/eventos-posts/dia-das-mulheres_600.png" alt="Post comemorativo de Feliz Dia das Mulheres para estúdio de manicure" loading="lazy" width="1200" height="1200" />
+              </picture>
+            </div>
+            <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button><button class="carousel-btn next" aria-label="Próxima imagem">›</button>
+            <div class="project-info"><span>Eventos e posts</span><h3>Comemorações</h3><p>Post comemorativo organizado com estética elegante, mensagem de marca e composição visual pensada para datas especiais.</p></div>
+          </article>
+        </div>
+
+        <div class="center-action reveal"><a class="btn btn-primary" href="#contato">Entrar em contato</a></div>
+      </div>
+    </section>
+
+    <section class="section results section-observe" id="resultados">
+      <div class="container results-grid">
+        <div class="section-heading reveal">
+          <p class="kicker">Resultados</p>
+          <h2>Estratégia visual transformada em números reais.</h2>
+          <p>Uma leitura clara da evolução de visualizações com gestão profissional.</p>
+        </div>
+        <div class="result-main reveal">
+          <span>Crescimento aproximado</span>
+          <strong data-count="238">0</strong><b>%</b>
+        </div>
+        <div class="metric-card reveal"><span>Sem gestão</span><strong data-count="3876">0</strong><p>25 Dez → 24 Jan</p></div>
+        <div class="metric-card reveal"><span>Com gestão</span><strong data-count="13086">0</strong><p>24 Jan → 22 Fev</p></div>
+        <div class="chart-card reveal"><canvas id="resultsChart" aria-label="Gráfico de resultados" role="img"></canvas></div>
+      </div>
+    </section>
+
+    <section class="section contact section-observe" id="contato">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="kicker">Contato</p>
+          <h2>Vamos criar juntas?</h2>
+          <p>Conteúdo com estética, direção e estratégia para marcas que querem se destacar.</p>
+          <ul class="contact-list">
+            <li>Marília - SP</li>
+            <li><a href="https://instagram.com/socialmedia_isadora" target="_blank" rel="noopener">@socialmedia_isadora</a></li>
+            <li><a href="https://wa.me/5514996032749" target="_blank" rel="noopener">+55 14 99603-2749</a></li>
+            <li><a href="mailto:Isadora.rezende28@gmail.com">Isadora.rezende28@gmail.com</a></li>
+          </ul>
+          <div class="contact-buttons">
+            <a href="https://instagram.com/socialmedia_isadora" target="_blank" rel="noopener"><img src="assets/icons/instagram.svg" alt="" />Instagram</a>
+            <a href="https://wa.me/5514996032749" target="_blank" rel="noopener"><img src="assets/icons/whatsapp.svg" alt="" />WhatsApp</a>
+            <a href="mailto:Isadora.rezende28@gmail.com" target="_blank"><img src="assets/icons/gmail.svg" alt="" />Gmail</a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" action="mailto:Isadora.rezende28@gmail.com" method="post" enctype="text/plain">
+          <label>Nome<input type="text" name="nome" placeholder="Seu nome" required /></label>
+          <label>Email<input type="email" name="email" placeholder="seuemail@email.com" required /></label>
+          <label>Mensagem<textarea name="mensagem" placeholder="Conte um pouco sobre seu projeto" rows="5" required></textarea></label>
+          <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand brand-image footer-logo" href="#inicio" aria-label="Voltar ao início">
+        <picture>
+          <source id="footerLogoSource" srcset="assets/logos/logo_white_300x300.png 300w, assets/logos/logo_white_600x600.png 600w, assets/logos/logo_white_1200x1200.png 1200w" sizes="90px" />
+          <img id="footerLogo" src="assets/logos/logo_white_600x600.png" alt="Isadora Rezende" width="600" height="600" loading="lazy" />
+        </picture>
+      </a>
+      <p>Social Media • Videomaker • Storymaker</p>
+      <p>Marília - SP • @socialmedia_isadora</p>
+      <small>© 2026 Isadora Rezende. Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
