@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
@@ -82,7 +83,12 @@
       <div class="hero-grid container">
         <div class="hero-copy reveal">
           <p class="kicker">Social Media • Videomaker • Storymaker</p>
-          <h1>Isadora<span></span></h1>
+          <h1 class="hero-logo-title" aria-label="Isadora Rezende">
+            <picture>
+              <source srcset="assets/logos/hero/isadora-rezende_300.png 300w, assets/logos/hero/isadora-rezende_600.png 600w, assets/logos/hero/isadora-rezende_1200.png 1200w" sizes="(max-width: 650px) 86vw, 560px" />
+              <img src="assets/logos/hero/isadora-rezende_600.png" alt="Isadora Rezende" width="1200" height="1200" fetchpriority="high" decoding="async" />
+            </picture>
+          </h1>
           <p class="hero-text">Transformo registros do dia a dia em conteúdos que atraem, conectam e vendem.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#perfil">Conheça meu trabalho</a>
@@ -170,10 +176,52 @@
         <div class="section-heading reveal">
           <p class="kicker">Projetos</p>
           <h2>Projetos com estética e intenção.</h2>
-          <p>Uma curadoria visual de conteúdos, marcas, eventos e registros estratégicos.</p>
+          <p>Planejamento estrategicamente pensado para transformar ideias em histórias que conectam</p>
         </div>
 
         <div class="project-grid">
+          <article class="project-card wide reveal making-card">
+            <div class="making-layout">
+              <div class="making-copy">
+                <span class="making-tag">Making of</span>
+                <h3>Bastidores</h3>
+                <p>Um olhar mais vivo e humano sobre o processo: captação vertical com layout próprio, vídeo centralizado e apresentação pensada para valorizar o making of de forma elegante.</p>
+                <div class="making-badges" aria-label="Características do making of">
+                  <span>Bastidores reais</span>
+                  <span>Captação vertical</span>
+                  <span>Storymaker</span>
+                </div>
+              </div>
+              <div class="making-stage">
+                <div class="making-glow" aria-hidden="true"></div>
+                <div class="making-video-shell" data-video-player>
+                  <div class="making-video-frame">
+                    <video class="making-video" autoplay muted loop playsinline preload="metadata" poster="assets/videos/making-of/isadora-making-of-poster.jpg">
+                      <source src="assets/videos/making-of/isadora-making-of.mp4" type="video/mp4" />
+                      Seu navegador não suporta vídeo em HTML5.
+                    </video>
+                    <button class="video-center-play" type="button" aria-label="Pausar vídeo">
+                      <span class="video-center-icon">Ⅱ</span>
+                    </button>
+                    <div class="video-top-label">
+                      <span>Making Of</span>
+                      <strong>Isadora Rezende</strong>
+                    </div>
+                    <div class="video-controls" aria-label="Controles do vídeo">
+                      <button class="video-control video-toggle" type="button" aria-label="Pausar vídeo">Ⅱ</button>
+                      <div class="video-progress-wrap">
+                        <input class="video-progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progresso do vídeo" />
+                        <div class="video-time"><span class="video-current">0:00</span><span class="video-duration">0:00</span></div>
+                      </div>
+                      <button class="video-control video-mute" type="button" aria-label="Ativar som">🔇</button>
+                      <button class="video-control video-fullscreen" type="button" aria-label="Tela cheia">⛶</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
           <article class="project-card wide reveal" data-carousel>
             <div class="project-media portrait-media" data-track>
               <picture>
@@ -182,7 +230,7 @@
               </picture>
             </div>
             <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button><button class="carousel-btn next" aria-label="Próxima imagem">›</button>
-            <div class="project-info"><span>Fotos profissionais</span><h3>Presença visual</h3><p>Retratos profissionais com direção de imagem, iluminação suave e composição pensada para fortalecer a presença da marca.</p></div>
+            <div class="project-info"><span>Fotos profissionais</span><h3>Presença visual</h3><p>Ensaios, posicionamento e fotos para redes sociais</p></div>
           </article>
 
           <article class="project-card reveal" data-carousel>
@@ -198,7 +246,7 @@
               />
             </div>
             <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button><button class="carousel-btn next" aria-label="Próxima imagem">›</button>
-            <div class="project-info"><span>Comidas</span><h3>Conteúdo gastronômico</h3><p>Produto real, textura, composição e apelo visual para fortalecer marcas de alimentos nas redes sociais.</p></div>
+            <div class="project-info"><span>Comidas</span><h3>Fotografia de Produto</h3><p>Imagens para delivery, cardápio, comércio e redes sociais</p></div>
           </article>
 
           <article class="project-card reveal logo-card" data-carousel>
@@ -213,7 +261,42 @@
               </picture>
             </div>
             <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button><button class="carousel-btn next" aria-label="Próxima imagem">›</button>
-            <div class="project-info"><span>Logotipo / Branding</span><h3>Identidade de marca</h3><p>Logotipos organizados em carrossel com proporção preservada, fundo limpo e leitura premium.</p></div>
+            <div class="project-info"><span>Logotipos</span><h3>Logo & Branding</h3><p>Galeria de identidades visuais para marcas e negócios</p></div>
+          </article>
+
+          <article class="project-card wide reveal identity-card" data-carousel>
+            <div class="project-media identity-media" data-track>
+              <picture>
+                <source srcset="assets/post/identidade-visual/elementos-botanicos_300.png 300w, assets/post/identidade-visual/elementos-botanicos_600.png 600w, assets/post/identidade-visual/elementos-botanicos_800.png 800w" sizes="(max-width: 650px) 92vw, 88vw" />
+                <img src="assets/post/identidade-visual/elementos-botanicos_600.png" alt="Elementos botânicos da identidade visual Giovanna Padovan Studio" loading="lazy" width="800" height="800" />
+              </picture>
+              <picture>
+                <source srcset="assets/post/identidade-visual/fachada-externa_300.png 300w, assets/post/identidade-visual/fachada-externa_600.png 600w, assets/post/identidade-visual/fachada-externa_800.png 800w" sizes="(max-width: 650px) 92vw, 88vw" />
+                <img src="assets/post/identidade-visual/fachada-externa_600.png" alt="Aplicação da identidade visual Giovanna Padovan Studio em fachada externa" loading="lazy" width="800" height="800" />
+              </picture>
+              <picture>
+                <source srcset="assets/post/identidade-visual/cartao-identidade_300.png 300w, assets/post/identidade-visual/cartao-identidade_600.png 600w, assets/post/identidade-visual/cartao-identidade_800.png 800w" sizes="(max-width: 650px) 92vw, 88vw" />
+                <img src="assets/post/identidade-visual/cartao-identidade_600.png" alt="Prancha de identidade visual com monograma Giovanna Padovan Studio" loading="lazy" width="800" height="800" />
+              </picture>
+              <picture>
+                <source srcset="assets/post/identidade-visual/paleta_300.png 300w, assets/post/identidade-visual/paleta_600.png 600w, assets/post/identidade-visual/paleta_800.png 800w" sizes="(max-width: 650px) 92vw, 88vw" />
+                <img src="assets/post/identidade-visual/paleta_600.png" alt="Paleta de cores da identidade visual Giovanna Padovan Studio" loading="lazy" width="800" height="800" />
+              </picture>
+              <picture>
+                <source srcset="assets/post/identidade-visual/tipografia_300.png 300w, assets/post/identidade-visual/tipografia_600.png 600w, assets/post/identidade-visual/tipografia_800.png 800w" sizes="(max-width: 650px) 92vw, 88vw" />
+                <img src="assets/post/identidade-visual/tipografia_600.png" alt="Prancha de tipografia da identidade visual Giovanna Padovan Studio" loading="lazy" width="800" height="800" />
+              </picture>
+              <picture>
+                <source srcset="assets/post/identidade-visual/papelaria_300.png 300w, assets/post/identidade-visual/papelaria_600.png 600w, assets/post/identidade-visual/papelaria_800.png 800w" sizes="(max-width: 650px) 92vw, 88vw" />
+                <img src="assets/post/identidade-visual/papelaria_600.png" alt="Papelaria e materiais de marca da identidade visual Giovanna Padovan" loading="lazy" width="800" height="800" />
+              </picture>
+              <picture>
+                <source srcset="assets/post/identidade-visual/ambiente-studio_300.png 300w, assets/post/identidade-visual/ambiente-studio_600.png 600w, assets/post/identidade-visual/ambiente-studio_800.png 800w" sizes="(max-width: 650px) 92vw, 88vw" />
+                <img src="assets/post/identidade-visual/ambiente-studio_600.png" alt="Aplicação da identidade visual Giovanna Padovan Studio em ambiente interno" loading="lazy" width="800" height="800" />
+              </picture>
+            </div>
+            <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button><button class="carousel-btn next" aria-label="Próxima imagem">›</button>
+            <div class="project-info"><span>Identidade visual</span><h3>Branding completo</h3><p>Planejamento de paleta de cores, tipografia, elementos gráficos de forma sofisticada e consistente</p></div>
           </article>
 
           <article class="project-card wide reveal" data-carousel>
@@ -228,7 +311,7 @@
               </picture>
             </div>
             <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button><button class="carousel-btn next" aria-label="Próxima imagem">›</button>
-            <div class="project-info"><span>Casamento</span><h3>Momentos com narrativa</h3><p>Cerimônia e detalhes captados com delicadeza, composição elegante e foco emocional para contar a história do dia.</p></div>
+            <div class="project-info"><span>Casamento</span><h3>Momentos Especiais</h3><p>Entre luzes, sorrisos e detalhes, nasce um filme seu. Captação única para ser relembrada!</p></div>
           </article>
 
           <article class="project-card reveal" data-carousel>
@@ -239,7 +322,7 @@
               </picture>
             </div>
             <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button><button class="carousel-btn next" aria-label="Próxima imagem">›</button>
-            <div class="project-info"><span>Eventos e posts</span><h3>Comemorações</h3><p>Post comemorativo organizado com estética elegante, mensagem de marca e composição visual pensada para datas especiais.</p></div>
+            <div class="project-info"><span>Eventos</span><h3>Redes sociais</h3><p>Post e campanhas</p></div>
           </article>
         </div>
 

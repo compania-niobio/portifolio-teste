@@ -179,24 +179,173 @@
       const next = card.querySelector('.next');
       if (!track) return;
 
-      const move = direction => {
-        const width = track.clientWidth;
-        const nextLeft = track.scrollLeft + direction * width;
-        if (nextLeft >= track.scrollWidth - width / 2) {
-          track.scrollTo({ left: 0, behavior: 'smooth' });
-        } else if (nextLeft < 0) {
-          track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
-        } else {
-          track.scrollBy({ left: direction * width, behavior: 'smooth' });
+      const slides = [...track.children].filter(slide => slide.matches('img, picture, figure, div'));
+      const hasMultipleSlides = slides.length > 1;
+      let currentIndex = 0;
+      let autoplay = null;
+
+      if (!hasMultipleSlides) {
+        prev?.classList.add('is-hidden');
+        next?.classList.add('is-hidden');
+        return;
+      }
+
+      prev?.setAttribute('type', 'button');
+      next?.setAttribute('type', 'button');
+
+      const getSlideWidth = () => track.getBoundingClientRect().width || track.clientWidth || 1;
+
+      const goToSlide = index => {
+        const total = slides.length;
+        currentIndex = (index + total) % total;
+        track.scrollTo({
+          left: currentIndex * getSlideWidth(),
+          behavior: 'smooth'
+        });
+      };
+
+      const move = direction => goToSlide(currentIndex + direction);
+
+      const syncIndexFromScroll = () => {
+        currentIndex = Math.round(track.scrollLeft / getSlideWidth());
+      };
+
+      const startAutoplay = () => {
+        stopAutoplay();
+        autoplay = window.setInterval(() => move(1), 5200);
+      };
+
+      const stopAutoplay = () => {
+        if (autoplay) {
+          window.clearInterval(autoplay);
+          autoplay = null;
         }
       };
 
-      prev?.addEventListener('click', () => move(-1));
-      next?.addEventListener('click', () => move(1));
+      const restartAutoplay = () => {
+        stopAutoplay();
+        startAutoplay();
+      };
 
-      let autoplay = setInterval(() => move(1), 4300);
-      card.addEventListener('mouseenter', () => clearInterval(autoplay));
-      card.addEventListener('mouseleave', () => autoplay = setInterval(() => move(1), 4300));
+      prev?.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        move(-1);
+        restartAutoplay();
+      });
+
+      next?.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        move(1);
+        restartAutoplay();
+      });
+
+      track.addEventListener('scroll', () => {
+        window.requestAnimationFrame(syncIndexFromScroll);
+      }, { passive: true });
+
+      card.addEventListener('mouseenter', stopAutoplay);
+      card.addEventListener('mouseleave', startAutoplay);
+      card.addEventListener('focusin', stopAutoplay);
+      card.addEventListener('focusout', startAutoplay);
+
+      window.addEventListener('resize', () => {
+        track.scrollTo({ left: currentIndex * getSlideWidth(), behavior: 'auto' });
+      }, { passive: true });
+
+      startAutoplay();
+    });
+  }
+
+
+  function setupMakingOfPlayer() {
+    document.querySelectorAll('[data-video-player]').forEach(player => {
+      const video = player.querySelector('video');
+      const frame = player.querySelector('.making-video-frame');
+      const centerBtn = player.querySelector('.video-center-play');
+      const centerIcon = player.querySelector('.video-center-icon');
+      const toggleBtn = player.querySelector('.video-toggle');
+      const muteBtn = player.querySelector('.video-mute');
+      const fullscreenBtn = player.querySelector('.video-fullscreen');
+      const progress = player.querySelector('.video-progress');
+      const current = player.querySelector('.video-current');
+      const duration = player.querySelector('.video-duration');
+      if (!video || !frame || !progress) return;
+
+      const formatTime = seconds => {
+        if (!Number.isFinite(seconds)) return '0:00';
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+        return `${mins}:${secs}`;
+      };
+
+      const setPlayState = () => {
+        const paused = video.paused;
+        frame.classList.toggle('is-paused', paused);
+        const icon = paused ? '▶' : 'Ⅱ';
+        if (centerIcon) centerIcon.textContent = icon;
+        if (toggleBtn) {
+          toggleBtn.textContent = icon;
+          toggleBtn.setAttribute('aria-label', paused ? 'Reproduzir vídeo' : 'Pausar vídeo');
+        }
+        if (centerBtn) centerBtn.setAttribute('aria-label', paused ? 'Reproduzir vídeo' : 'Pausar vídeo');
+      };
+
+      const setMuteState = () => {
+        if (!muteBtn) return;
+        muteBtn.textContent = video.muted ? '🔇' : '🔊';
+        muteBtn.setAttribute('aria-label', video.muted ? 'Ativar som' : 'Silenciar vídeo');
+      };
+
+      const updateProgress = () => {
+        const value = video.duration ? (video.currentTime / video.duration) * 100 : 0;
+        progress.value = value;
+        progress.style.setProperty('--progress', `${value}%`);
+        if (current) current.textContent = formatTime(video.currentTime);
+        if (duration) duration.textContent = formatTime(video.duration);
+      };
+
+      const togglePlay = () => {
+        if (video.paused) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      };
+
+      video.addEventListener('loadedmetadata', updateProgress);
+      video.addEventListener('timeupdate', updateProgress);
+      video.addEventListener('play', setPlayState);
+      video.addEventListener('pause', setPlayState);
+      video.addEventListener('volumechange', setMuteState);
+      video.addEventListener('click', togglePlay);
+      centerBtn?.addEventListener('click', togglePlay);
+      toggleBtn?.addEventListener('click', togglePlay);
+
+      muteBtn?.addEventListener('click', () => {
+        video.muted = !video.muted;
+        if (!video.muted) video.volume = Math.max(video.volume, 0.65);
+      });
+
+      progress.addEventListener('input', () => {
+        if (!video.duration) return;
+        video.currentTime = (Number(progress.value) / 100) * video.duration;
+        updateProgress();
+      });
+
+      fullscreenBtn?.addEventListener('click', () => {
+        const target = player.querySelector('.making-video-frame') || player;
+        if (document.fullscreenElement) {
+          document.exitFullscreen?.();
+        } else {
+          target.requestFullscreen?.();
+        }
+      });
+
+      setPlayState();
+      setMuteState();
+      updateProgress();
     });
   }
 
@@ -254,4 +403,5 @@
   setupSkills();
   setupCounters();
   setupCarousels();
+  setupMakingOfPlayer();
 })();

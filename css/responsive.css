@@ -40,14 +40,69 @@
 }
 
 @media (max-width:900px){
-  .logo-card .branding-track picture{min-height:500px}
-  .logo-card .branding-track img{width:min(88%,460px);max-height:330px}
+  .logo-card .branding-track picture{min-height:540px;padding:20px}
+  .logo-card .branding-track img{width:min(92%,540px);max-height:390px}
+  .project-media.identity-media picture{min-height:560px;padding:18px}
+  .project-media.identity-media img{width:min(100%,760px);max-height:440px}
 }
 @media (max-width:650px){
-  .logo-card .branding-track picture{min-height:430px;padding:24px}
-  .logo-card .branding-track img{width:min(94%,380px);max-height:280px}
+  .logo-card .branding-track picture{min-height:460px;padding:18px}
+  .logo-card .branding-track img{width:min(96%,430px);max-height:320px}
+  .project-card.identity-card{min-height:500px}
+  .project-media.identity-media picture{min-height:500px;padding:14px}
+  .project-media.identity-media img{width:min(100%,560px);max-height:370px}
 }
 @media (max-width:430px){
-  .logo-card .branding-track picture{min-height:390px;padding:20px}
-  .logo-card .branding-track img{width:min(96%,330px);max-height:250px}
+  .logo-card .branding-track picture{min-height:410px;padding:14px}
+  .logo-card .branding-track img{width:min(98%,360px);max-height:285px}
+  .project-card.identity-card{min-height:440px}
+  .project-media.identity-media picture{min-height:440px;padding:12px}
+  .project-media.identity-media img{width:min(100%,390px);max-height:315px}
+}
+
+
+/* Responsivo do logo principal na hero */
+@media (max-width:900px){
+  .hero-logo-title img{width:min(560px,88vw);max-height:230px;transform:translateX(-12px)}
+}
+@media (max-width:650px){
+  .hero-logo-title{margin-bottom:18px}
+  .hero-logo-title img{width:min(470px,94vw);max-height:200px;transform:translateX(-10px)}
+}
+@media (max-width:430px){
+  .hero-logo-title img{width:min(390px,96vw);max-height:172px;transform:translateX(-8px)}
+}
+
+
+@media (max-width:900px){
+  .making-card,.making-layout{min-height:680px}
+  .making-copy h3{font-size:clamp(40px,9vw,72px)}
+  .making-video-shell{width:min(330px,84vw)}
+}
+@media (max-width:650px){
+  .making-card,.making-layout{min-height:620px}
+  .making-layout{padding:22px 18px;gap:22px}
+  .making-video-shell{width:min(300px,88vw);padding:10px;border-radius:28px}
+  .making-video{border-radius:20px}
+  .making-badges{gap:8px}
+}
+@media (max-width:430px){
+  .making-card,.making-layout{min-height:580px}
+  .making-video-shell{width:min(280px,90vw)}
+  .making-copy p{font-size:15px}
+}
+
+
+@media (max-width:650px){
+  .video-top-label{top:12px;left:12px;right:12px}
+  .video-top-label strong{display:none}
+  .video-center-play{width:66px;height:66px}
+  .video-controls{left:9px;right:9px;bottom:9px;gap:7px;padding:8px;border-radius:18px}
+  .video-control{width:34px;height:34px;flex-basis:34px;font-size:13px}
+  .video-mute{display:none}
+  .video-time{font-size:9px}
+}
+@media (max-width:430px){
+  .video-fullscreen{display:none}
+  .video-center-play{width:60px;height:60px}
 }
